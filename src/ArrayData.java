@@ -7,15 +7,33 @@ public class ArrayData {
     private int colData[];
 
     public ArrayData() {
-        super();
+        this.rows = 10;
+        this.columns = 10;
+        this.values = new int[rows][columns];
+        this.rowData = new int[rows];
+        this.colData = new int[columns];
     }
 
     public ArrayData(int nrows, int ncolumns) {
-        super();
+        this.rows = nrows;
+        this.columns = ncolumns;
+        this.values = new int[rows][columns];
+        this.rowData = new int[rows];
+        this.colData = new int[columns];
     }
 
     public ArrayData(int nrows, int ncolumns, int startingValue) {
-        super();
+        this.rows = nrows;
+        this.columns = ncolumns;
+        this.values = new int[rows][columns];
+
+        for(int i = 0; i < rows; i++) {
+            for(int j = 0; j < columns; j++)
+                this.values[i][j] = startingValue;
+        }
+
+        this.rowData = new int[rows];
+        this.colData = new int[columns];
     }
 
 
